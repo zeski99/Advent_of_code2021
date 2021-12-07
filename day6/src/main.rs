@@ -19,7 +19,7 @@ fn part_one(input: &Vec<i64>){
 fn part_two(input: &Vec<i64>){
     let mapping: Vec<i64> = calc(255);
     let num: i64 = input.iter().map(|&n| mapping[5-n as usize]).sum::<i64>();
-    println!("Part One: {}", num);
+    println!("Part Two: {}", num);
 }
 
 fn main() {
