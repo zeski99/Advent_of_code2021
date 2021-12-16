@@ -74,11 +74,7 @@ fn read_packets(input: &str, len: usize, ltype: char) -> (Vec<Packet>, usize){
 }
 
 fn part_one(packet: &Packet) -> u64 {
-    let mut sum = packet.ver;
-    for p in packet.sub.iter(){
-        sum += part_one(&p);
-    }
-    return sum;
+    packet.ver + packet.sub.iter().map(part_one).sum::<u64>()
 }
 
 fn part_two(packet: &Packet) -> u64{
